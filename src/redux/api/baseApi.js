@@ -44,7 +44,7 @@ import {
   export const baseApi = createApi({
     reducerPath: "baseApi",
     baseQuery: baseQueryWithErrorHandling,
-    tagTypes: ["Clients"],
+    tagTypes: ["Clients","Devices"],
     endpoints: () => ({}),
   });
   

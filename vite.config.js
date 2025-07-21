@@ -16,6 +16,11 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/device":{
+        target: "http://52.74.26.144:8008",
+        changeOrigin: true,
+        secure: false,
+      }
       // Add more endpoints as needed
     },
   },
