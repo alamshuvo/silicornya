@@ -5,10 +5,8 @@ import { toast } from 'sonner';
 import ApiClientFormModal from '../components/Modal/ApiClientFromModal';
 import DeviceTableComponent from '../components/DeviceTable';
 
-const Home = () => {
+const User = () => {
   const [showModal, setShowModal] = useState(false);
-  // const [createApiClient] = useCreateApiClientMutation();
-
   const handleSubmit = async () => {
     try {
       // await createApiClient(data).unwrap();
@@ -24,10 +22,10 @@ const Home = () => {
     <div className="font-fustat">
      
       
-      <p>Home Page</p>
+      <p>User Page</p>
 
       <div className="flex justify-between items-center p-5 mt-5">
-        <p className="text-xl">All Device List</p>
+        <p className="text-xl">All User List</p>
         <button
           className="flex items-center px-3 py-2 bg-purple-500 text-white rounded-lg cursor-pointer hover:bg-purple-300"
           onClick={() => setShowModal(true)}
@@ -49,4 +47,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default User;

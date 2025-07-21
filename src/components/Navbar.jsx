@@ -70,7 +70,7 @@ const Navbar = ({ onToggleSidebar, isSidebarOpen }) => {
                 <div className="flex flex-col text-sm text-gray-700">
                   <button
                     className="px-4 py-2 hover:bg-gray-100 text-left flex items-center gap-2"
-                    onClick={() => navigate("/profile")}
+                    onClick={() => navigate("/user")}
                   >
                     <User></User>
                     Profile

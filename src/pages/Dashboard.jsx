@@ -2,7 +2,7 @@ import TableComponent from "../components/Table";
 
 const Card = ({ title, value, growth }) => {
     return (
-      <div className="bg-gradient-to-r from-purple-500 to-purple-300 text-white p-5 rounded-2xl shadow-md">
+      <div className="bg-gradient-to-r cursor-pointer from-purple-500 to-purple-300 text-white p-5 rounded-2xl shadow-md">
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <div className="text-2xl font-bold">${value}</div>
         <p className="text-sm mt-1">📈 Increase by {growth}%</p>
@@ -14,7 +14,7 @@ const Card = ({ title, value, growth }) => {
     <div className="bg-white rounded-xl shadow-md p-6 min-h-[200px] flex flex-col gap-2">
       <h4 className="font-semibold text-gray-700">{title}</h4>
       <div className="flex-1 flex items-center justify-center text-gray-400">
-        (Chart Placeholder)
+        (Please Wait for the chart to load)
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+// components/Sidebar.jsx
 import {
     LayoutDashboard,
     Home,
@@ -5,11 +6,12 @@ import {
     Package,
     ChevronDown,
     ChevronRight,
+    X,
   } from "lucide-react";
   import { useState } from "react";
   import { NavLink } from "react-router-dom";
   
-  const Sidebar = ({ isCollapsed }) => {
+  const Sidebar = ({ isCollapsed, onClose }) => {
     const [openProfile, setOpenProfile] = useState(false);
   
     const toggleProfile = () => setOpenProfile(!openProfile);
@@ -20,8 +22,18 @@ import {
     ];
   
     return (
-      <div className="h-full p-4 space-y-2 text-white font-fustat">
-        {/* Top items */}
+      <div className="h-full p-4 space-y-2 text-white font-fustat relative">
+        {/* Close button for mobile */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-white hover:text-gray-200 md:hidden"
+          >
+            <X size={24} />
+          </button>
+        )}
+  
+        {/* Top menu items */}
         {menuItems.map((item, idx) => (
           <NavLink
             to={item.path}
@@ -31,13 +43,14 @@ import {
                 isActive ? "bg-purple-700 font-semibold" : ""
               }`
             }
+            onClick={onClose}
           >
             <div>{item.icon}</div>
             {!isCollapsed && <span>{item.label}</span>}
           </NavLink>
         ))}
   
-        {/* Profile Dropdown */}
+        {/* Dropdown for Profile */}
         <div className="flex flex-col gap-2">
           <div
             onClick={toggleProfile}
@@ -48,32 +61,38 @@ import {
               {!isCollapsed && <span>Profile</span>}
             </div>
             {!isCollapsed && (
-              <div>{openProfile ? <ChevronDown size={18} /> : <ChevronRight size={18} />}</div>
+              <div>
+                {openProfile ? (
+                  <ChevronDown size={18} />
+                ) : (
+                  <ChevronRight size={18} />
+                )}
+              </div>
             )}
           </div>
   
-          {/* Submenu - only show if not collapsed */}
           {!isCollapsed && openProfile && (
             <div className="ml-8 flex flex-col gap-2">
               <NavLink
-                to="/dashboard/product"
+                to="/product"
                 className={({ isActive }) =>
                   `flex items-center gap-3 p-2 rounded hover:bg-purple-500 transition-all ${
                     isActive ? "bg-purple-600 font-semibold" : ""
                   }`
                 }
+                onClick={onClose}
               >
                 <Package size={16} />
                 <span>Product</span>
               </NavLink>
-  
               <NavLink
-                to="/dashboard/user"
+                to="/user"
                 className={({ isActive }) =>
                   `flex items-center gap-3 p-2 rounded hover:bg-purple-500 transition-all ${
                     isActive ? "bg-purple-600 font-semibold" : ""
                   }`
                 }
+                onClick={onClose}
               >
                 <User size={16} />
                 <span>User</span>
