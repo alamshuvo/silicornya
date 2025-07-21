@@ -16,7 +16,7 @@ import {
   
     const menuItems = [
       { icon: <LayoutDashboard />, label: "Dashboard", path: "/" },
-      { icon: <Home />, label: "Home", path: "/dashboard/home" },
+      { icon: <Home />, label: "Home", path: "/home" },
     ];
   
     return (

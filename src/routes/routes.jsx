@@ -1,25 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
-import Layout from "../Layout/MainLayout";
-import PrivateRoute from "./PrivateRoute"; // import the wrapper
+import Layout from "../Layout/MainLayout"
+import PrivateRoute from "./PrivateRoute"; 
+import Home from "../pages/Home";
+
 
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Login />, // public login page
+    element: <Login />, 
   },
   {
     path: "/",
-    element: <PrivateRoute />, // this checks for token
+    element: <PrivateRoute />, 
     children: [
       {
-        element: <Layout />, // layout with navbar & sidebar
+        element: <Layout />, 
         children: [
           {
             index: true,
-            element: <Dashboard />, // dashboard will now be protected
+            element: <Dashboard />, 
           },
+          {
+            path:"/home",
+            element:<Home></Home>
+          }
         ],
       },
     ],

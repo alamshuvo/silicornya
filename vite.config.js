@@ -11,7 +11,7 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
-      "/cars": {
+      "/client": {
         target: "http://52.74.26.144:8008",
         changeOrigin: true,
         secure: false,

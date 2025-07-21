@@ -13,7 +13,7 @@ import {
       const token = (getState()).auth?.token;
       console.log(token);
       if (token) {
-        headers.set("authorization", token);
+        headers.set("Authorization", `Token ${token}`);
       }
       return headers;
     },
@@ -44,7 +44,7 @@ import {
   export const baseApi = createApi({
     reducerPath: "baseApi",
     baseQuery: baseQueryWithErrorHandling,
-    tagTypes: ["allCars", "cars"],
+    tagTypes: ["Clients"],
     endpoints: () => ({}),
   });
   

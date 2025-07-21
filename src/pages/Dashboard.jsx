@@ -1,3 +1,5 @@
+import TableComponent from "../components/Table";
+
 const Card = ({ title, value, growth }) => {
     return (
       <div className="bg-gradient-to-r from-purple-500 to-purple-300 text-white p-5 rounded-2xl shadow-md">
@@ -36,6 +38,7 @@ const Card = ({ title, value, growth }) => {
           <ChartPlaceholder title="Revenue Sources" />
           <ChartPlaceholder title="Top Selling Categories" />
         </div>
+        <TableComponent></TableComponent>
       </div>
     );
   };
