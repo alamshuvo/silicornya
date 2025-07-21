@@ -1,17 +1,18 @@
-import Login from "./pages/Login"
-
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./pages/Dashboard";
 
 
 function App() {
-
-
   return (
-    <>
-     
-     <Login></Login>
-     
-    </>
-  )
+    <div className="flex">
+      <Sidebar/>
+      <div className="flex-1 flex flex-col">
+        <Navbar />
+        <Dashboard />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

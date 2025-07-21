@@ -32,7 +32,7 @@ const Login = () => {
       if ( token) {
         dispatch(setUser({ user, token }));
         toast.success("Logged in successfully!", { id: toastId });
-        navigate(`/dashboard`);
+        navigate(`/`);
       } else {
         toast.error("Invalid response from server", { id: toastId });
       }
