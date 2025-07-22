@@ -29,14 +29,14 @@ const Dashboard = () => {
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Dashboard</h1>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <Card title="Weekly Sales" value="5,00,000" growth={30} />
         <Card title="Monthly Sales" value="5,00,000" growth={20} />
         <Card title="Yearly Sales" value="5,00,000" growth={10} />
       </div>
 
       {/* Chart Panels */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-10 font-fustat">
         <SimpleAreaChart></SimpleAreaChart>
         <YearlyBarChart></YearlyBarChart>
         <SimpleAreaChart></SimpleAreaChart>

@@ -1,26 +1,31 @@
 import {
   BarChart,
   Bar,
+  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
   ResponsiveContainer,
 } from "recharts";
 
 const data = [
-  { year: "2019", value: 3000 },
-  { year: "2020", value: 2500 },
-  { year: "2021", value: 10000 },
-  { year: "2022", value: 5000 },
-  { year: "2023", value: 3500 },
+  { year: "2019", uv: 3000, pv: 2000 },
+  { year: "2020", uv: 2500, pv: 1500 },
+  { year: "2021", uv: 10000, pv: 5000 },
+  { year: "2022", uv: 5000, pv: 3000 },
+  { year: "2023", uv: 3500, pv: 2000 },
 ];
 
 const YearlyBarChart = () => {
   return (
-    <div className=" bg-white rounded-xl p-2">
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={data}>
+    <div className="bg-white rounded-xl p-4">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+          data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 5 }}
+        >
           <CartesianGrid strokeDasharray="3 3" vertical={false} />
           <XAxis
             dataKey="year"
@@ -42,13 +47,21 @@ const YearlyBarChart = () => {
               fontSize: "12px",
             }}
           />
-          <Bar dataKey="value" fill="url(#purpleGradient)" radius={[4, 4, 0, 0]} barSize={30} />
-          <defs>
-            <linearGradient id="purpleGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#9F7AEA" stopOpacity={0.8} />
-              <stop offset="100%" stopColor="#805AD5" stopOpacity={1} />
-            </linearGradient>
-          </defs>
+          <Legend />
+          <Bar
+            dataKey="pv"
+            fill="#8884d8"
+            barSize={30}
+            activeBar={<Rectangle fill="pink" stroke="blue" />}
+            radius={[4, 4, 0, 0]}
+          />
+          <Bar
+            dataKey="uv"
+            fill="#82ca9d"
+            barSize={30}
+            activeBar={<Rectangle fill="gold" stroke="purple" />}
+            radius={[4, 4, 0, 0]}
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
