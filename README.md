@@ -1,13 +1,14 @@
-# React + Vite
+# Silicornya Dashboard 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern single-page application built with **React** and **Redux Toolkit** for state management. This project follows a scalable architecture, integrates API logic using RTK Query (optional), and follows best practices with clean code.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ **Clone the repository**
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# silicornya
+```bash
+git clone https://github.com/alamshuvo/silicornya.git
+cd silicornya
+2 Install dependencies
+npm install
+3 Start 
+npm run dev 
