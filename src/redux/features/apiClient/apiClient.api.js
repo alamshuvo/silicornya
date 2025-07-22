@@ -1,27 +1,50 @@
 import { baseApi } from "../../api/baseApi";
 
-
 const apiClientApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    // POST: Create client
     createApiClient: builder.mutation({
-      query: (userInfo) => ({
+      query: (clientData) => ({
         url: "/client/apiClient/create/",
         method: "POST",
-        body: userInfo,
+        body: clientData,
       }),
+      invalidatesTags: ["Clients"],
     }),
 
-  
+    // GET: List API Clients
     getApiClients: builder.query({
       query: () => ({
-        url: "/client/apiClient/list/", 
+        url: "/client/apiClient/list/",
         method: "GET",
       }),
+      providesTags: ["Clients"],
+    }),
+
+    // DELETE: Delete API Client
+    deleteApiClient: builder.mutation({
+      query: (id) => ({
+        url: `/client/apiClient/${id}/`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Clients"],
+    }),
+
+    // PATCH: Update API Client
+    updateApiClient: builder.mutation({
+      query: ({ id, updatedData }) => ({
+        url: `/client/apiClient/${id}/`,
+        method: "PATCH", // Use PUT if your backend expects it
+        body: updatedData,
+      }),
+      invalidatesTags: ["Clients"],
     }),
   }),
   overrideExisting: false,
 });
 
-// Export hooks
-export const { useCreateApiClient, useGetApiClientsQuery } = apiClientApi;
+export const {
+  useCreateApiClientMutation,
+  useGetApiClientsQuery,
+  useDeleteApiClientMutation,
+  useUpdateApiClientMutation,
+} = apiClientApi;

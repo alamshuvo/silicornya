@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SimpleAreaChart from "../Charts/AreaCharts";
 import YearlyBarChart from "../Charts/BarCharts";
 import CustomBarChart from "../Charts/BarCharts";
@@ -41,6 +42,18 @@ const Dashboard = () => {
         <YearlyBarChart></YearlyBarChart>
         <SimpleAreaChart></SimpleAreaChart>
       </div>
+      <div className="flex justify-between items-center font-fustat">
+        <p className="text-2xl font-bold">Bulk Client</p>
+        <Link to={"/user"}>
+        <button
+          className="px-4 py-2 bg-purple-600 text-white font-semibold rounded-md shadow-md hover:bg-purple-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-1"
+          type="button"
+        >
+          Show All User
+        </button>
+        </Link>
+      </div>
+
       <TableComponent></TableComponent>
     </div>
   );
