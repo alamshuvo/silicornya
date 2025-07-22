@@ -53,6 +53,10 @@ const Login = () => {
 
       <div className="w-full max-w-md bg-white p-6 shadow rounded">
         <h2 className="text-xl font-semibold text-center mb-4">Login</h2>
+        <div className="flex mb-5 gap-5">
+          <p>parvez</p>
+          <p>P@rvez123</p>
+        </div>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block mb-1">Username</label>

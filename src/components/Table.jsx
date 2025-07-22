@@ -60,7 +60,7 @@ const TableComponent = () => {
             <th className="p-4">Sl</th>
             <th className="p-4">Image</th>
             <th className="p-4">Name</th>
-            <th className="p-4">Category</th>
+            <th className="p-4">Company</th>
             <th className="p-4">Balance</th>
             <th className="p-4">Action</th>
           </tr>
